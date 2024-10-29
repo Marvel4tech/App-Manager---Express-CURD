@@ -1,8 +1,9 @@
 const express = require("express")
 const dotenv = require("dotenv").config()
 const app = express()
+const contactRoute = require("./routes/contactRoutes")
 
-
+app.use("/api/contacts", contactRoute)
 
 
 const PORT = process.env.PORT || 3001
