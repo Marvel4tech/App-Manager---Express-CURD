@@ -10,6 +10,11 @@ const getContacts = (req, res) => {
 //@access Public
 const createContact = (req, res) => {
     console.log("user details : ", req.body)
+    const { name, email, job } = req.body
+    if(!name || !email || !job) {
+        res.status(400)
+        throw new Error("All fields are mandatory!")
+    }
     res.status(201).json({ message: "Create new contact" })
 }
 
